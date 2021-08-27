@@ -9,6 +9,7 @@ attr_reader :bike
     end
 
     def dock(bike)
+      fail 'No docks available' if @bike
       @bike = bike
     end      
 
