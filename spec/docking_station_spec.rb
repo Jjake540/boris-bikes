@@ -20,7 +20,9 @@ describe DockingStation do
     describe '#dock' do
       it 'raises an error when no docks available' do
       # bike = Bike.new
-      20.times { subject.dock Bike.new }
+      DockingStation::DEFAULT_CAPACITY.times do
+      subject.dock Bike.new
+      end
         expect { subject.dock Bike.new }.to raise_error 'No docks available'   
       end
     end
